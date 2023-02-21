@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  position: fixed;
+  z-index: 998;
+}
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.modal-fade {
+  webkit-animation: Modal_fadeIn__zuilp 0.2s ease;
+  animation: modal-fade 0.2s ease;
+}
+.popup {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  border-radius: 16px;
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  min-width: 60vw;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  will-change: opacity, transform;
+}
+.inner {
+  padding: 20px 40px;
+}
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.content {
+  height: calc(100vh - 200px);
+  margin: 0 -40px;
+  overflow-y: overlay;
+  padding: 24px 40px 0;
+}
+@media (min-width: 1024px) {
+  html ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  html ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+  html ::-webkit-scrollbar {
+    border-radius: 0;
+    height: 8px;
+    width: 8px;
+  }
+}
